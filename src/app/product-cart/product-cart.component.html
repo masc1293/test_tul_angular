@@ -1,0 +1,24 @@
+<div>
+    <h3>Agregar Producto al carrito</h3>
+    <form [formGroup]="productCartForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <span class="title">Nombre del Producto: </span>
+            <span>{{producto.nombre}}</span>
+        </div>
+        <div class="form-group">
+            <span class="title">SKU: </span>
+            <span>{{producto.sku}}</span>
+        </div>
+        <div class="form-group">
+            <span class="title">Descripcion: </span>
+            <span>{{producto.descripcion}}</span>
+        </div>
+        <div class="form-group">
+            <label for="quantity" class="title">Cantidad</label>
+            <input type="number" class="form-control" id="quantity" required  formControlName="quantity">
+            <input type="hidden" formControlName="product_id" [(ngModel)]="producto.id" id="product_id">
+        </div>
+        <button class="btn btn-primary" type="submit">Agregar Producto al carrito</button>
+        <button class="btn btn-secondary btn-cancel" type="button" [routerLink]="['/home/']">Cancelar</button>
+    </form>
+</div>

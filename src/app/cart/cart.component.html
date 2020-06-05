@@ -1,0 +1,33 @@
+<div class="row btn-create">
+    <div class="col-md-12 text-right">
+        <button class="btn btn-primary btn-sm" type="button" [routerLink]="['/home/']">Volver a la lista de Productos</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Estatus</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productCart">
+                    <td>{{product.id}}</td>
+                    <td>{{product.productCart.nombre}}</td>
+                    <td>{{product.state.status}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td class="btn-action">
+                        <button class="btn btn-warning btn-sm" type="submit" (click)="checkoutCart(product.id)">Checkout</button>
+                        <button class="btn btn-primary btn-sm" type="button" [routerLink]="['/updateCart',product.id]">Actualizar</button>
+                        <button class="btn btn-danger btn-sm" type="button" (click)="deleteProduct(product.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.navbar {
+    background: #696969;
+    margin-bottom: 50px;
+    padding: 10px 0;
+}
+
+.product {
+    padding: 30px;
+    border: 1px solid #000;
+    margin: 5px;
+}
+.title-dev{
+    color: #fff;
+}

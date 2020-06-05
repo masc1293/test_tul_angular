@@ -1,0 +1,37 @@
+<div class="row btn-create">
+    <div class="col-md-6">
+        <h3>{{productoList}}</h3>
+    </div>
+    <div class="col-md-6 text-right">
+        <button class="btn btn-warning btn-sm btn-cart" type="button" [routerLink]="['/cart/']">{{cart}}</button>
+        <button class="btn btn-primary btn-sm" type="button" [routerLink]="['/create/']">{{created}}</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>{{name}}</th>
+                    <th>{{sku}}</th>
+                    <th>{{description}}</th>
+                    <th>{{action}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{product.id}}</td>
+                    <td>{{product.nombre}}</td>
+                    <td>{{product.sku}}</td>
+                    <td>{{product.descripcion}}</td>
+                    <td class="btn-action">
+                        <button class="btn btn-warning btn-sm" type="button" [routerLink]="['/productCart',product.id]">{{add}}</button>
+                        <button class="btn btn-primary btn-sm" type="button" [routerLink]="['/update',product.id]">{{modify}}</button>
+                        <button class="btn btn-danger btn-sm" type="button" (click)="deleteProduct(product.id)">{{deleted}}</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
